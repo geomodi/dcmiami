@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dealership Digital Solutions - Alex Castro & Juan Esteban Cardona</title>c
+    <title>Dealership Digital Solutions - Alex Castro & Juan Esteban Cardona</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
     <style>
@@ -22,11 +22,28 @@
         .collapsible {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            opacity: 0;
+            transition: all 0.3s ease-out;
+            visibility: hidden;
         }
         .collapsible.active {
-            max-height: 2000px;
-            transition: max-height 0.5s ease-in;
+            max-height: none;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.5s ease-in;
+        }
+        @media (max-width: 768px) {
+            .mobile-padding {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .mobile-text {
+                font-size: 1rem;
+                line-height: 1.5;
+            }
+            .mobile-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -138,12 +155,12 @@
                 Hiring individual professionals for these services would cost your dealership thousands more each month.
             </p>
             
-            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">The Power of Consolidated Expertise</h3>
-                <p class="text-lg text-gray-700 mb-4">
+            <div class="bg-white p-8 rounded-lg shadow-md mb-8 mobile-padding">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800 mobile-text">The Power of Consolidated Expertise</h3>
+                <p class="text-lg text-gray-700 mb-4 mobile-text">
                     In today's competitive automotive market, dealerships typically face a difficult choice: hire multiple specialists at premium rates or compromise on digital presence. Our solution breaks this paradigm by delivering comprehensive expertise through a single, dedicated professional.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6 mobile-grid">
                     <div class="bg-blue-50 p-6 rounded-lg">
                         <h4 class="text-xl font-bold mb-3 text-blue-800">Traditional Approach</h4>
                         <p class="text-gray-700 mb-4">Hiring just one specialist (e.g., Marketing Manager) would cost approximately <span class="font-bold">$7,981/month</span>, yet they would only bring expertise in their specific field.</p>
@@ -181,13 +198,13 @@
                         </ul>
                     </div>
                 </div>
-                <p class="text-lg text-gray-700 italic">
+                <p class="text-lg text-gray-700 italic mobile-text">
                     "By consolidating multiple roles into a single, dedicated professional, we deliver comprehensive digital expertise at a fraction of the cost of traditional approaches, while ensuring seamless coordination and consistent quality across all aspects of your dealership's digital presence."
                 </p>
             </div>
             
             <div id="comparison-content" class="collapsible">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 mobile-grid">
                     <div class="bg-white p-6 rounded-lg shadow-md">
                         <div class="border-b pb-4 mb-4">
                             <h3 class="text-xl font-bold mb-1">Freelance Marketing (General)</h3>
@@ -252,7 +269,7 @@
                     </div>
                 </div>
                 
-                <div class="bg-blue-50 p-8 rounded-lg border border-blue-200 mb-12">
+                <div class="bg-blue-50 p-8 rounded-lg border border-blue-200 mb-12 mobile-padding">
                     <h3 class="text-2xl font-bold mb-2 text-gray-800">What You Save</h3>
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
                         <li class="flex items-start gap-2">
@@ -281,6 +298,88 @@
                         </li>
                     </ul>
                 </div>
+
+                <!-- Cost Summary Table -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+                    <div class="p-6 border-b">
+                        <h3 class="text-2xl font-bold text-gray-800">Cost Comparison Summary</h3>
+                        <p class="text-gray-600 mt-2">Monthly cost breakdown and savings analysis</p>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full">
+                            <thead>
+                                <tr class="bg-gray-50">
+                                    <th class="px-6 py-4 text-left text-sm font-semibold text-gray-600">Service</th>
+                                    <th class="px-6 py-4 text-right text-sm font-semibold text-gray-600">Individual Cost</th>
+                                    <th class="px-6 py-4 text-right text-sm font-semibold text-gray-600">Our Solution</th>
+                                    <th class="px-6 py-4 text-right text-sm font-semibold text-gray-600">Savings</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Marketing Management</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$7,981</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$2,500</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$5,481</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">SEO & Online Presence</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$8,272</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">Included</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$8,272</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Paid Advertising</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$7,783</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">Included</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$7,783</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Business Automation</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$7,721</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">Included</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$7,721</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Project Management</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$8,263</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">Included</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$8,263</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Ad Trafficking</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$6,106</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">Included</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$6,106</td>
+                                </tr>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Marketing Support</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$4,943</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">Included</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$4,943</td>
+                                </tr>
+                                <tr class="bg-gray-50 font-semibold">
+                                    <td class="px-6 py-4 text-sm text-gray-900">Total Monthly Cost</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$51,069</td>
+                                    <td class="px-6 py-4 text-right text-sm text-gray-900">$2,500</td>
+                                    <td class="px-6 py-4 text-right text-sm font-medium text-green-600">$48,569</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="p-6 bg-blue-50 border-t">
+                        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                            <div>
+                                <h4 class="text-lg font-semibold text-blue-800">Total Annual Savings</h4>
+                                <p class="text-2xl font-bold text-blue-900">$582,828</p>
+                            </div>
+                            <div class="text-right">
+                                <p class="text-sm text-gray-600">That's a 95% cost reduction</p>
+                                <p class="text-sm text-gray-600">while maintaining or improving service quality</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -289,19 +388,95 @@
             <h2 class="text-3xl font-bold mb-8 text-gray-800">Custom Dealership Application</h2>
             <div class="bg-blue-50 p-8 rounded-lg border border-blue-200 mb-12">
                 <p class="text-lg text-gray-700 mb-4">
-                    Most custom dealership applications cost <span class="font-bold text-blue-800">$30,000–$100,000+</span> upfront and often require additional fees for updates or changes. My approach is different: for <span class="font-bold text-blue-800">$1,000/month</span> over 12 months, you get a fully custom-built application—tailored to your dealership's exact needs. Once paid, the app is yours, with no further licensing fees.
+                    Most custom dealership applications cost <span class="font-bold text-blue-800">$30,000–$100,000+</span> upfront and often require additional fees for updates or changes. Our approach is different: we build your custom application with <span class="font-bold text-blue-800">no upfront costs</span> and a clear path to ownership.
                 </p>
                 <p class="text-lg text-gray-700 mb-4">
-                    The application will provide your staff with real-time access to performance metrics, appointments, number of dials, lead quality, and proper lead follow-up. As your business evolves, I'll continue developing and enhancing the app to add new features and adapt to your workflow.
+                    The application will provide your staff with real-time access to performance metrics, appointments, number of dials, lead quality, and proper lead follow-up. As your business evolves, we'll continue developing and enhancing the app to add new features and adapt to your workflow.
                 </p>
                 <h4 class="font-bold text-lg mb-2">Key Benefits:</h4>
                 <ul class="list-disc pl-6 space-y-2 text-gray-700">
-                    <li>Own your software outright after 12 months—no ongoing license fees</li>
+                    <li>No upfront development costs - we build for 3 months at no charge</li>
+                    <li>Own your software outright after 12 months of payments</li>
+                    <li>No obligation to keep the app if it doesn't meet your needs</li>
                     <li>Continuous development and feature updates included</li>
                     <li>Custom dashboards for metrics, appointments, and lead management</li>
                     <li>Adaptable to your dealership's unique processes and growth</li>
                     <li>Direct communication for support and new feature requests</li>
-                    <li>Significantly lower cost and risk compared to traditional app development</li>
+                </ul>
+            </div>
+
+            <!-- App Cost Breakdown Table -->
+            <div class="bg-white rounded-lg shadow-md overflow-hidden mb-12">
+                <div class="p-6 border-b">
+                    <h3 class="text-2xl font-bold text-gray-800">App Development Cost Structure</h3>
+                    <p class="text-gray-600 mt-2">Transparent pricing with no upfront costs</p>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full">
+                        <thead>
+                            <tr class="bg-gray-50">
+                                <th class="px-6 py-4 text-left text-sm font-semibold text-gray-600">Phase</th>
+                                <th class="px-6 py-4 text-right text-sm font-semibold text-gray-600">Duration</th>
+                                <th class="px-6 py-4 text-right text-sm font-semibold text-gray-600">Monthly Cost</th>
+                                <th class="px-6 py-4 text-right text-sm font-semibold text-gray-600">Total Cost</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm text-gray-900">Initial Development</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">3 months</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">$0</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">$0</td>
+                            </tr>
+                            <tr class="hover:bg-gray-50">
+                                <td class="px-6 py-4 text-sm text-gray-900">Monthly Payments</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">12 months</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">$1,000</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">$12,000</td>
+                            </tr>
+                            <tr class="bg-gray-50 font-semibold">
+                                <td class="px-6 py-4 text-sm text-gray-900">Total Investment</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">15 months</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">-</td>
+                                <td class="px-6 py-4 text-right text-sm text-gray-900">$12,000</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="p-6 bg-blue-50 border-t">
+                    <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                        <div>
+                            <h4 class="text-lg font-semibold text-blue-800">Traditional App Development</h4>
+                            <p class="text-2xl font-bold text-blue-900">$30,000 - $100,000+</p>
+                            <p class="text-sm text-gray-600">upfront cost</p>
+                        </div>
+                        <div class="text-right">
+                            <p class="text-sm text-gray-600">Our approach saves you</p>
+                            <p class="text-xl font-bold text-green-600">$18,000 - $88,000+</p>
+                            <p class="text-sm text-gray-600">in initial investment</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-green-50 p-8 rounded-lg border border-green-200">
+                <h3 class="text-xl font-bold mb-4 text-green-800">Risk-Free Development</h3>
+                <p class="text-gray-700 mb-4">
+                    We understand that investing in custom software is a significant decision. That's why we've structured our development process to minimize your risk:
+                </p>
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>3 months of development at no cost - see the value before you commit</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>No obligation to continue if the app doesn't meet your needs</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span>Full ownership after 12 months of payments - no ongoing license fees</span>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -333,11 +508,20 @@
             if (content.classList.contains('active')) {
                 button.textContent = 'Show Less';
                 chevron.style.transform = 'rotate(180deg)';
+                setTimeout(() => {
+                    content.style.maxHeight = 'none';
+                }, 500);
             } else {
                 button.textContent = 'See All';
                 chevron.style.transform = 'rotate(0deg)';
+                content.style.maxHeight = '0';
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const content = document.getElementById('comparison-content');
+            content.style.maxHeight = '0';
+        });
     </script>
 </body>
 </html>
