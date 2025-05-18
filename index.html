@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealership Digital Solutions - Alex Castro & Juan Esteban Cardina</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <style>
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        .accordion-content {
+            display: none;
+        }
+        .accordion-content.active {
+            display: block;
+        }
+        .collapsible {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .collapsible.active {
+            max-height: 2000px;
+            transition: max-height 0.5s ease-in;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="bg-white shadow-md py-4 px-6 sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-2xl font-bold text-blue-800">Dealership Digital Solutions</div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="max-w-6xl mx-auto py-12 px-6">
+        <!-- Services Section -->
+        <div id="services-section" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">Services Tailored For You</h2>
+            <p class="text-lg mb-8 text-gray-600">
+                Unlock 10x value: Comprehensive solutions for <span class="font-bold text-blue-800">$2,500/month</span>, a fraction of local costs.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="mb-4 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Social Media Management</h3>
+                    <p class="text-gray-600">Complete management of all social media channels, customer response handling, and AI chatbot configuration trained specifically for your dealership to improve lead quality.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="mb-4 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">SEO & Online Presence</h3>
+                    <p class="text-gray-600">Comprehensive SEO work, Google Ads management, GMB listing optimization, and organic online presence improvement to ensure your dealership stands out.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="mb-4 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Lead Management System</h3>
+                    <p class="text-gray-600">Implementation of efficient workflows for daily leads, similar to rooftop systems used by external BDC companies, to effectively manage and convert leads.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="mb-4 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Application Integration</h3>
+                    <p class="text-gray-600">Connect all dealership applications (Asana, Slack, website, phone system) to ensure effective communication and provide your team with the best tools for success.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="mb-4 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">SMS & Email Management</h3>
+                    <p class="text-gray-600">Manage all SMS and email communications with AI assistance to ensure optimal response rates, best rebuttals, and increased appointment bookings.</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition">
+                    <div class="mb-4 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-gray-800">Application Infrastructure</h3>
+                    <p class="text-gray-600">Setting up the foundation for your custom dealership application that will centralize important metrics and lead classification.</p>
+                </div>
+            </div>
+
+            <div class="bg-blue-50 p-8 rounded-lg border border-blue-200 mb-12">
+                <h3 class="text-2xl font-bold mb-4 text-blue-800">What You Get</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3">
+                        <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <div>
+                            <span class="font-semibold">Dedicated Internal Expert:</span> Unlike outsourced services, you get a dedicated professional working directly with your team.
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <div>
+                            <span class="font-semibold">Automotive Expertise:</span> Deep experience within the automotive sector
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <div>
+                            <span class="font-semibold">Cost Effective:</span> Save thousands monthly compared to hiring individual specialists or agencies for each service.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Comparison Section -->
+        <div id="comparison-section" class="mb-16">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800">Cost Comparison</h2>
+                <button 
+                    onclick="toggleComparison()"
+                    class="bg-blue-600 text-white px-6 py-2 rounded-md font-semibold hover:bg-blue-700 transition flex items-center gap-2"
+                >
+                    <span id="comparison-button-text">See All</span>
+                    <svg id="comparison-chevron" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                </button>
+            </div>
+            <p class="text-lg mb-8 text-gray-600">
+                Hiring individual professionals for these services would cost your dealership thousands more each month.
+            </p>
+            
+            <div class="bg-white p-8 rounded-lg shadow-md mb-8">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">The Power of Consolidated Expertise</h3>
+                <p class="text-lg text-gray-700 mb-4">
+                    In today's competitive automotive market, dealerships typically face a difficult choice: hire multiple specialists at premium rates or compromise on digital presence. Our solution breaks this paradigm by delivering comprehensive expertise through a single, dedicated professional.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-3 text-blue-800">Traditional Approach</h4>
+                        <p class="text-gray-700 mb-4">Hiring just one specialist (e.g., Marketing Manager) would cost approximately <span class="font-bold">$7,981/month</span>, yet they would only bring expertise in their specific field.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <svg class="text-red-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                <span>Limited to one area of expertise</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="text-red-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                <span>Additional costs for other specialists</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="text-red-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                                <span>Coordination challenges between specialists</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-green-50 p-6 rounded-lg">
+                        <h4 class="text-xl font-bold mb-3 text-green-800">Our Solution</h4>
+                        <p class="text-gray-700 mb-4">Our comprehensive service at <span class="font-bold">$2,500/month</span> provides expertise across all digital aspects through a single, dedicated professional.</p>
+                        <ul class="space-y-2">
+                            <li class="flex items-start gap-2">
+                                <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Consolidated expertise in one professional</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>68% cost savings compared to single specialist</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                <span>Seamless integration across all digital initiatives</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="text-lg text-gray-700 italic">
+                    "By consolidating multiple roles into a single, dedicated professional, we deliver comprehensive digital expertise at a fraction of the cost of traditional approaches, while ensuring seamless coordination and consistent quality across all aspects of your dealership's digital presence."
+                </p>
+            </div>
+            
+            <div id="comparison-content" class="collapsible">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">Freelance Marketing (General)</h3>
+                            <p class="text-3xl font-bold text-gray-800">$7,981<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: Salary.com</p>
+                        </div>
+                        <p class="text-gray-600">Handles general marketing strategy, content creation, and campaign management for the dealership.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">SEO Specialist</h3>
+                            <p class="text-3xl font-bold text-gray-800">$8,272<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: Salary.com (Miami, FL)</p>
+                        </div>
+                        <p class="text-gray-600">Optimizes website content and structure to improve search engine rankings and organic traffic.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">Paid Advertising Specialist</h3>
+                            <p class="text-3xl font-bold text-gray-800">$7,783<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: Salary.com (Miami, FL)</p>
+                        </div>
+                        <p class="text-gray-600">Manages Google Ads, Meta ads, and other paid digital advertising channels to drive qualified traffic.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">Business Automation Specialist</h3>
+                            <p class="text-3xl font-bold text-gray-800">$7,721<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: Salary.com (FL)</p>
+                        </div>
+                        <p class="text-gray-600">Implements and manages efficient workflows and integration between various business applications.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">Project Manager</h3>
+                            <p class="text-3xl font-bold text-gray-800">$8,263<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: Builtin.com (Miami, FL)</p>
+                        </div>
+                        <p class="text-gray-600">Coordinates digital initiatives, manages timelines, and ensures all marketing activities align with business goals.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">Ad Trafficker</h3>
+                            <p class="text-3xl font-bold text-gray-800">$6,106<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: Salary.com (Miami, FL)</p>
+                        </div>
+                        <p class="text-gray-600">Manages the technical implementation of ads across platforms and ensures proper tracking and reporting.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <div class="border-b pb-4 mb-4">
+                            <h3 class="text-xl font-bold mb-1">Marketing Specialist</h3>
+                            <p class="text-3xl font-bold text-gray-800">$4,943<span class="text-base font-normal text-gray-500">/month</span></p>
+                            <p class="text-sm text-gray-500">Source: PayScale (Miami, FL)</p>
+                        </div>
+                        <p class="text-gray-600">Executes marketing activities across channels, assists with content creation, and supports lead generation.</p>
+                    </div>
+                </div>
+                
+                <div class="bg-blue-50 p-8 rounded-lg border border-blue-200 mb-12">
+                    <h3 class="text-2xl font-bold mb-2 text-gray-800">What You Save</h3>
+                    <ul class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        <li class="flex items-start gap-2">
+                            <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>No recruitment or HR costs</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Flexible, scalable support as your needs change</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>No training periods or learning curves</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Single point of contact for all services</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Seamless integration across all digital initiatives</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="text-green-500 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span>Specialized automotive industry knowledge</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- App Section -->
+        <div id="app-section" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 text-gray-800">Custom Dealership Application</h2>
+            <div class="bg-blue-50 p-8 rounded-lg border border-blue-200 mb-12">
+                <p class="text-lg text-gray-700 mb-4">
+                    Most custom dealership applications cost <span class="font-bold text-blue-800">$30,000–$100,000+</span> upfront and often require additional fees for updates or changes. My approach is different: for <span class="font-bold text-blue-800">$1,000/month</span> over 12 months, you get a fully custom-built application—tailored to your dealership's exact needs. Once paid, the app is yours, with no further licensing fees.
+                </p>
+                <p class="text-lg text-gray-700 mb-4">
+                    The application will provide your staff with real-time access to performance metrics, appointments, number of dials, lead quality, and proper lead follow-up. As your business evolves, I'll continue developing and enhancing the app to add new features and adapt to your workflow.
+                </p>
+                <h4 class="font-bold text-lg mb-2">Key Benefits:</h4>
+                <ul class="list-disc pl-6 space-y-2 text-gray-700">
+                    <li>Own your software outright after 12 months—no ongoing license fees</li>
+                    <li>Continuous development and feature updates included</li>
+                    <li>Custom dashboards for metrics, appointments, and lead management</li>
+                    <li>Adaptable to your dealership's unique processes and growth</li>
+                    <li>Direct communication for support and new feature requests</li>
+                    <li>Significantly lower cost and risk compared to traditional app development</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="text-2xl font-bold mb-2">Dealership Digital Solutions</div>
+                    <p class="text-gray-400">Transforming automotive digital presence</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                &copy; 2024 Alex Castro & Juan Esteban Cardina. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleComparison() {
+            const content = document.getElementById('comparison-content');
+            const button = document.getElementById('comparison-button-text');
+            const chevron = document.getElementById('comparison-chevron');
+            
+            content.classList.toggle('active');
+            
+            if (content.classList.contains('active')) {
+                button.textContent = 'Show Less';
+                chevron.style.transform = 'rotate(180deg)';
+            } else {
+                button.textContent = 'See All';
+                chevron.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
+</body>
+</html>
